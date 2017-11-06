@@ -14,7 +14,7 @@
       <ion-item-divider color="light">FAVORITE CONTACTS</ion-item-divider>
         <ion-item *ngFor="let contact of favoriteContacts" (click)="detail(contact)">
             <ion-avatar item-start>
-                <img [src]="contact.smallImageURL">
+                <img [src]="contact.smallImageURL" onerror="this.src='../../assets/contacts/userSmall.png'" />
             </ion-avatar>
             <h2><img src="../../assets/favorites/favoriteTrue.png" />{{contact.name}}</h2>
             <p>{{contact.companyName}}</p>
@@ -27,7 +27,7 @@
       <ion-item-divider color="light">OTHER CONTACTS</ion-item-divider>
         <ion-item *ngFor="let contact of otherContacts" (click)="detail(contact)">
             <ion-avatar item-start>
-                <img [src]="contact.smallImageURL">
+                <img [src]="contact.smallImageURL" onerror="this.src='../../assets/contacts/userSmall.png'" />
             </ion-avatar>
             <h2><img src="../../assets/favorites/favoriteFalse.png" />{{contact.name}}</h2>
             <p>{{contact.companyName}}</p>

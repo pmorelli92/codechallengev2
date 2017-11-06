@@ -13,7 +13,7 @@
 
   <div class="centerDiv">
     <ion-avatar item-start>
-        <img class="centerImg" [src]="contact.largeImageURL">
+        <img class="centerImg" [src]="contact.smallImageURL" onerror="this.src='../../assets/contacts/userLarge.png'" />
     </ion-avatar>
     <p class="boldText centerText">{{contact.name}}</p>
     <p *ngIf="contact.companyName" class="greyText centerText">{{contact.companyName}}</p>
