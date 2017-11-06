@@ -1,2 +1,11 @@
-page-contactList {
+page-contactlist {
+    .centerImg {
+        display: block;
+        margin: 0 0 80% 0;
+    }
+
+    .contactName {
+        font-size: 15px; 
+        font-weight: 600;
+    }
 }

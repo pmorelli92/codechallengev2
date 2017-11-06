@@ -6,6 +6,12 @@
 -->
 <ion-header>
   <ion-navbar>
+      <div class="wrapper">
+          <div class="block75"></div>
+          <div class="block25">
+              <img src="../../assets/favorites/favorite{{contact.isFavorite}}.png" (click)="changeFavoriteStatus(contact)" />
+          </div>
+      </div>
   </ion-navbar>
 </ion-header>
 
@@ -13,49 +19,56 @@
 
   <div class="centerDiv">
     <ion-avatar item-start>
-        <img class="centerImg" [src]="contact.smallImageURL" onerror="this.src='../../assets/contacts/userLarge.png'" />
+        <img class="centerImg" [src]="contact.largeImageURL" onerror="this.src='../../assets/contacts/userLarge.png'" />
     </ion-avatar>
-    <p class="boldText centerText">{{contact.name}}</p>
-    <p *ngIf="contact.companyName" class="greyText centerText">{{contact.companyName}}</p>
+    <p class="boldText centerText font20px" >{{contact.name}}</p>
+    <p *ngIf="contact.companyName" class="greyText centerText font18px">{{contact.companyName}}</p>
   </div>
 
-  <div *ngIf="contact.phone.home">
-    <p class="greyText">PHONE:</p>
-    <div class="wrapper">
+  <ion-list>
+
+    <ion-item *ngIf="contact.phone.home">
+      <p class="greyText">PHONE:</p>
+      <div class="wrapper">
         <div class="block75 boldText">{{contact.phone.home}}</div>
         <div class="block25 greyText">Home</div>
-    </div>
-  </div>
+      </div>
+    </ion-item>
 
-  <div *ngIf="contact.phone.mobile">
-    <p class="greyText">PHONE:</p>
-    <div class="wrapper">
+    <ion-item *ngIf="contact.phone.mobile">
+      <p class="greyText">PHONE:</p>
+      <div class="wrapper">
         <div class="block75 boldText">{{contact.phone.mobile}}</div>
         <div class="block25 greyText">Mobile</div>
-    </div>
-  </div>
-
-  <div *ngIf="contact.phone.work">
-    <p class="greyText">PHONE:</p>
-    <div class="wrapper">
+      </div>
+    </ion-item>
+    
+    <ion-item *ngIf="contact.phone.work">
+      <p class="greyText">PHONE:</p>
+      <div class="wrapper">
         <div class="block75 boldText">{{contact.phone.work}}</div>
         <div class="block25 greyText">Work</div>
-    </div>  
-  </div>
-
-  <div *ngIf="contact.address">
-    <p class="greyText">ADDRESS:</p>
-    <div class="boldText" [innerHTML]="displayAddress(contact.address)"></div>
-  </div>
-
-  <div *ngIf="contact.birthdate">
-    <p class="greyText">BIRTHDATE:</p>
-    <p class="boldText">{{contact.birthdate}}</p>
-  </div>
-
-  <div *ngIf="contact.emailAddress">
-    <p class="greyText">EMAIL:</p>
-    <p class="boldText">{{contact.emailAddress}}</p>
-  </div>
-
+      </div>  
+    </ion-item>
+    
+    <ion-item *ngIf="contact.address">
+      <p class="greyText">ADDRESS:</p>
+      <div class="boldText" [innerHTML]="displayAddress(contact.address)"></div>
+    </ion-item>
+    
+    <ion-item *ngIf="contact.birthdate">
+      <p class="greyText">BIRTHDATE:</p>
+      <div class="wrapper">
+        <div class="block75 boldText">{{contact.birthdate}}</div>
+      </div>
+    </ion-item>
+    
+    <ion-item *ngIf="contact.emailAddress">
+      <p class="greyText">EMAIL:</p>
+      <div class="wrapper">
+        <div class="block75 boldText">{{contact.emailAddress}}</div>
+      </div>
+    </ion-item>
+    
+  </ion-list>
 </ion-content>

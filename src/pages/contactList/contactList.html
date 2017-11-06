@@ -16,8 +16,13 @@
             <ion-avatar item-start>
                 <img [src]="contact.smallImageURL" onerror="this.src='../../assets/contacts/userSmall.png'" />
             </ion-avatar>
-            <h2><img src="../../assets/favorites/favoriteTrue.png" />{{contact.name}}</h2>
-            <p>{{contact.companyName}}</p>
+            <div style="display:inline-block;">
+              <img class="centerImg" src="../../assets/favorites/favorite{{contact.isFavorite}}.png" />
+            </div>
+            <div style="display:inline-block;">
+              <p class="contactName">{{contact.name}}</p>
+              <p>{{contact.companyName ? contact.companyName : '&nbsp;' }}</p>
+            </div>
             <ion-note item-end>
             </ion-note>
         </ion-item>
@@ -29,8 +34,13 @@
             <ion-avatar item-start>
                 <img [src]="contact.smallImageURL" onerror="this.src='../../assets/contacts/userSmall.png'" />
             </ion-avatar>
-            <h2><img src="../../assets/favorites/favoriteFalse.png" />{{contact.name}}</h2>
-            <p>{{contact.companyName}}</p>
+            <div style="display:inline-block;">
+              <img class="centerImg" src="../../assets/favorites/favorite{{contact.isFavorite}}.png" style="visibility: hidden" />
+            </div>
+            <div style="display:inline-block;">
+              <p class="contactName">{{contact.name}}</p>
+              <p>{{contact.companyName ? contact.companyName : '&nbsp;' }}</p>
+            </div>
             <ion-note item-end>
             </ion-note>
         </ion-item>
