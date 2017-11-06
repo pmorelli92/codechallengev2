@@ -1,4 +1,4 @@
-##Windows Instructions for Ionic / Cordova setup
+## Windows Instructions for Ionic / Cordova setup
 
 1. Install node.js
 2. npm install --global --production windows-build-tools
