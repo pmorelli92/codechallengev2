@@ -1,26 +1,22 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+##Windows Instructions for Ionic / Cordova setup
 
-## How to use this template
+1. Install node.js
+2. npm install --global --production windows-build-tools
+3. npm install --global node-gyp
+4. Add to PATH variable the following: %USERPROFILE%\.windows-build-tools\python27
+5. npm install --global ionic@latest
+6. npm install --global cordova@latest
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+## For creating project with Ionic
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+1. ionic start projectName
+2. ionic cordova platform add ios
+3. ionic cordova platform add android
 
-### With the Ionic CLI:
+## For updating when saving
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+1. ionic serve
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+## IDE: Visual Studio Code
 
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+1. Install extension **Ionic Extension Pack**

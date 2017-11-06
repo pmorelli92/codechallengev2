@@ -1,0 +1,61 @@
+<!--
+  Generated template for the ContactDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="centerDiv">
+    <ion-avatar item-start>
+        <img class="centerImg" [src]="contact.largeImageURL">
+    </ion-avatar>
+    <p class="boldText centerText">{{contact.name}}</p>
+    <p *ngIf="contact.companyName" class="greyText centerText">{{contact.companyName}}</p>
+  </div>
+
+  <div *ngIf="contact.phone.home">
+    <p class="greyText">PHONE:</p>
+    <div class="wrapper">
+        <div class="block75 boldText">{{contact.phone.home}}</div>
+        <div class="block25 greyText">Home</div>
+    </div>
+  </div>
+
+  <div *ngIf="contact.phone.mobile">
+    <p class="greyText">PHONE:</p>
+    <div class="wrapper">
+        <div class="block75 boldText">{{contact.phone.mobile}}</div>
+        <div class="block25 greyText">Mobile</div>
+    </div>
+  </div>
+
+  <div *ngIf="contact.phone.work">
+    <p class="greyText">PHONE:</p>
+    <div class="wrapper">
+        <div class="block75 boldText">{{contact.phone.work}}</div>
+        <div class="block25 greyText">Work</div>
+    </div>  
+  </div>
+
+  <div *ngIf="contact.address">
+    <p class="greyText">ADDRESS:</p>
+    <div class="boldText" [innerHTML]="displayAddress(contact.address)"></div>
+  </div>
+
+  <div *ngIf="contact.birthdate">
+    <p class="greyText">BIRTHDATE:</p>
+    <p class="boldText">{{contact.birthdate}}</p>
+  </div>
+
+  <div *ngIf="contact.emailAddress">
+    <p class="greyText">EMAIL:</p>
+    <p class="boldText">{{contact.emailAddress}}</p>
+  </div>
+
+</ion-content>

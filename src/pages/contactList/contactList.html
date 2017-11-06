@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contacts
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- Filtering and ordering are going to be provided by the component as stated in the following doc -->
+  <!-- https://angular.io/guide/pipes#no-filter-pipe -->
+
+  <ion-item-group>
+      <ion-item-divider color="light">FAVORITE CONTACTS</ion-item-divider>
+        <ion-item *ngFor="let contact of favoriteContacts" (click)="detail(contact)">
+            <ion-avatar item-start>
+                <img [src]="contact.smallImageURL">
+            </ion-avatar>
+            <h2><img src="../../assets/favorites/favoriteTrue.png" />{{contact.name}}</h2>
+            <p>{{contact.companyName}}</p>
+            <ion-note item-end>
+            </ion-note>
+        </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+      <ion-item-divider color="light">OTHER CONTACTS</ion-item-divider>
+        <ion-item *ngFor="let contact of otherContacts" (click)="detail(contact)">
+            <ion-avatar item-start>
+                <img [src]="contact.smallImageURL">
+            </ion-avatar>
+            <h2><img src="../../assets/favorites/favoriteFalse.png" />{{contact.name}}</h2>
+            <p>{{contact.companyName}}</p>
+            <ion-note item-end>
+            </ion-note>
+        </ion-item>
+  </ion-item-group>
+  
+</ion-content>
