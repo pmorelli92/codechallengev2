@@ -10,8 +10,6 @@
 ## For creating project with Ionic
 
 1. ionic start projectName
-2. ionic cordova platform add ios
-3. ionic cordova platform add android
 
 ## For updating when saving
 
@@ -20,3 +18,14 @@
 ## IDE: Visual Studio Code
 
 1. Install extension **Ionic Extension Pack**
+
+## Running this project
+
+1. Open the folder in the Visual Studio Code
+2. In the terminal run: 
+  1. ionic cordova platform add ios
+  2. ionic cordova platform add android
+  3. ionic cordova platform add browserionic cordova
+3. When prompted to download node dependencies, accept.
+4. ionic serve
+5. Debug the device in the platform you like.
